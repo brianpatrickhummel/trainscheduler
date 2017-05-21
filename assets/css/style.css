@@ -1,0 +1,177 @@
+* {
+	box-sizing: border-box;
+	font-family: 'Jura', sans-serif;
+	letter-spacing: 1px;
+}
+
+@font-face {
+  font-family: 'cassannet_plusregular';
+  src: url('../fonts/Cassannet_Plus_Regular.otf');
+
+}
+
+.jumbotron {
+	background-color: black;
+	color: white;
+}
+.jumbotron h1 {
+  font-size: 150px;
+  font-weight: 100;
+  letter-spacing: -8px;
+  word-spacing: 10px;
+  margin-top: 0px;
+}
+
+thead {
+	margin: 10px;
+}
+
+.panel-primary, .form-control{
+	border-color: black;
+}
+
+.table>thead>tr>th {
+	border-bottom: 1px solid black;
+	color: black;
+	font-weight: 300;
+}
+
+.panel-primary > .panel-heading {
+	background-color: black;
+	border-color: black;
+}
+
+.btn-primary {
+	background-color: black;
+	border-color: black;
+	background-image: none;
+	font-weight: 100;
+	letter-spacing: 3px;
+}
+
+i {
+	margin: 5px;
+}
+
+
+h4 {
+	letter-spacing: 10px;
+	word-spacing: 14px;
+	font-weight: 100;
+	text-align: center;
+	font-size: 14px;
+	}
+
+.panel-title  {
+	letter-spacing: 10px;
+	word-spacing: 14px;
+	font-weight: 100;
+	text-align: left;
+	font-size: 14px;
+}
+
+label {
+	font-weight: 300;
+}
+
+/*----------Media Queries-----------*/
+
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991px) {
+		.jumbotron h1 {
+		font-size: 95px;
+		letter-spacing: -6px;
+		}
+
+		h4 {
+		letter-spacing: 10px;
+		word-spacing: 14px;
+		font-weight: 100;
+		text-align: center;
+	}
+
+	.panel-title  {
+		letter-spacing: 10px;
+		word-spacing: 14px;
+		font-weight: 100;
+		text-align: left;
+	}
+}
+
+
+
+/* Extra small devices (phones, up to 480px) */
+@media screen and (max-width: 767px) {
+		.jumbotron h1 {
+		font-size: 63px;
+		letter-spacing: -3px;
+		}
+
+		h4 {
+		letter-spacing: 10px;
+		word-spacing: 14px;
+		font-weight: 100;
+		text-align: center;
+		font-size: 14px;
+		}
+
+	 .panel-title {
+		letter-spacing: 10px;
+		word-spacing: 10px;
+		font-weight: 100;
+		text-align: left;
+		font-size: 12px;
+		}
+
+	.table>thead>tr>th, label{
+		font-size: 12px;
+	}
+}
+
+/*----------------Hover.css--------------------*/
+
+@-webkit-keyframes hvr-icon-pulse-grow {
+  to {
+    -webkit-transform: scale(1.3);
+    transform: scale(1.3);
+  }
+}
+@keyframes hvr-icon-pulse-grow {
+  to {
+    -webkit-transform: scale(1.3);
+    transform: scale(1.3);
+  }
+}
+.hvr-icon-pulse-grow {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  position: relative;
+  padding-right: 2.2em;
+}
+.hvr-icon-pulse-grow:before {
+  content: "\f238";
+  position: absolute;
+  right: 1em;
+  padding: 0 1px;
+  font-family: FontAwesome;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.hvr-icon-pulse-grow:hover:before, .hvr-icon-pulse-grow:focus:before, .hvr-icon-pulse-grow:active:before {
+  -webkit-animation-name: hvr-icon-pulse-grow;
+  animation-name: hvr-icon-pulse-grow;
+  -webkit-animation-duration: 0.3s;
+  animation-duration: 0.3s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-direction: alternate;
+  animation-direction: alternate;
+}
