@@ -23,7 +23,7 @@ $('.authenticate-button').on("click", function (event) {
           firebase.auth.GithubAuthProvider.PROVIDER_ID
         ],
       };
-
+      console.log(uiConfig);
       // Initialize the FirebaseUI Widget using Firebase.
       var ui = new firebaseui.auth.AuthUI(firebase.auth());
       // The start method will wait until the DOM is loaded.
