@@ -137,7 +137,7 @@ label {
 }
 
 .login {
-  animation: kenburns 25s infinite;
+  animation: kenburns 20s infinite;
 }
 
 @keyframes kenburns {
