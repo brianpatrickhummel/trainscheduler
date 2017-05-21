@@ -151,7 +151,8 @@ label {
 		}
 
 	.table>thead>tr>th, label{
-		font-size: 12px;
+		font-size: 9px;
+		font-weight: 400;
 	}
 
 	.submit-button {
