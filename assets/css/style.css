@@ -36,6 +36,9 @@ thead {
 	color: black;
 	font-weight: 300;
 }
+.panel-body {
+	overflow: scroll;
+}
 
 .panel-primary > .panel-heading {
 	background-color: black;
@@ -48,6 +51,21 @@ thead {
 	background-image: none;
 	font-weight: 100;
 	letter-spacing: 3px;
+	border: none;
+}
+
+.btn:hover {
+	background-color: #2E281D;
+}
+
+.btn:active:focus {
+	outline: none;
+	background-color: #2E281D;
+
+}
+.btn:focus {
+	outline: none;
+	background-color: #2E281D;
 }
 
 i {
@@ -81,21 +99,7 @@ label {
 	font-weight: 300;
 }
 
-@keyframes fadeInDownBig {
-  from {
-    opacity: 0;
-    transform: translate3d(0, -2000px, 0);
-  }
 
-  to {
-    opacity: 1;
-    transform: none;
-  }
-}
-
-.fadeInDownBig {
-  animation-name: fadeInDownBig;
-}
 /*----------Media Queries-----------*/
 
 
@@ -139,19 +143,25 @@ label {
 		}
 
 	 .panel-title {
-		letter-spacing: 10px;
+		letter-spacing: 8px;
 		word-spacing: 10px;
-		font-weight: 100;
+		font-weight: 200;
 		text-align: left;
-		font-size: 12px;
+		font-size: 10px;
 		}
 
 	.table>thead>tr>th, label{
 		font-size: 12px;
 	}
+
+	.submit-button {
+		letter-spacing: 4px;
+		font-size: 10px;
+		font-weight: 200;
+	}
 }
 
-/*----------------Hover.css--------------------*/
+/*----------------Hover.css--Submit Button------------------*/    
 
 /* Float Shadow */
 .hvr-float-shadow {
