@@ -77,6 +77,7 @@ thead {
 i {
 	margin: 5px;
 	margin-right: 6.5px;
+	color:white;
 }
 
 .submit-button, .authenticate-button {
@@ -105,18 +106,71 @@ label {
 	font-weight: 300;
 }
 
+/*-------------Login Screen---------*/
+
+.login { 
+	height: 100%;
+	width: 100%;
+	position: absolute;                    /*login screen body*/
+	background: url(../images/engine.jpg) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+.loginHeader > h1 {
+	color:white;
+	font-size: 150px;
+  font-weight: 100;
+  letter-spacing: -8px;
+  word-spacing: 10px;
+  margin-top: 0px;
+}
+
+.loginDiv {
+	margin-top: 10em;
+}
+
+.login {
+  animation: kenburns 25s infinite;
+}
+
+@keyframes kenburns {
+    0% {
+      opacity: 0;
+    }
+    5% {
+      opacity: 1;
+    }
+    95% {
+        transform: scale3d(1.5, 1.5, 1.5) translate3d(-50px, -50px, 0px);
+        animation-timing-function: ease-in;
+        opacity: 1;
+    }
+    100% {
+        transform: scale3d(2, 2, 2) translate3d(-70px, -80px, 0px);
+        opacity: 0;
+    }
+}
 
 /*----------Media Queries-----------*/
 
 
 /* Small devices (tablets, 768px and up) */
+
 @media (min-width: 768px) and (max-width: 991px) {
-		.jumbotron h1 {
+	.jumbotron h1 {
 		font-size: 95px;
 		letter-spacing: -6px;
-		}
+	}
 
-		h4 {
+	.loginHeader > h1 {
+		font-size: 95px;
+		letter-spacing: -6px;
+	}
+	
+	h4 {
 		letter-spacing: 10px;
 		word-spacing: 14px;
 		font-weight: 100;
@@ -134,27 +188,33 @@ label {
 
 
 /* Extra small devices (phones, up to 480px) */
+
 @media screen and (max-width: 767px) {
-		.jumbotron h1 {
+	.jumbotron h1 {
 		font-size: 63px;
 		letter-spacing: -3px;
-		}
+	}
 
-		h4 {
+	.loginHeader > h1 {
+		font-size: 63px;
+		letter-spacing: -3px;
+	}
+	
+	h4 {
 		letter-spacing: 10px;
 		word-spacing: 12px;
 		font-weight: 200;
 		text-align: center;
 		font-size: 14px;
-		}
+	}
 
-	 .panel-title {
+ .panel-title {
 		letter-spacing: 6px;
 		word-spacing: 8px;
 		font-weight: 400;
 		text-align: left;
 		font-size: 9px;
-		}
+	}
 
 	.table>thead>tr>th, label{
 		font-size:9px;
