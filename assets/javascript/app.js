@@ -16,6 +16,7 @@
 
 $('.authenticate-button').on("click", function (event) {
 	event.preventDefault();
+  $('.authenticate-button').remove();
 	var uiConfig = {
     signInSuccessUrl: 'index2.html',
     signInOptions: [

@@ -128,6 +128,10 @@ label {
   margin-top: 0px;
 }
 
+.authenticate-button {
+	margin-top: 25px;
+}
+
 .loginDiv {
 	margin-top: 10em;
 }
