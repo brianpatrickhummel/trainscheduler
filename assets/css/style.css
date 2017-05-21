@@ -136,16 +136,16 @@ label {
 
 		h4 {
 		letter-spacing: 10px;
-		word-spacing: 14px;
-		font-weight: 100;
+		word-spacing: 12px;
+		font-weight: 200;
 		text-align: center;
 		font-size: 14px;
 		}
 
 	 .panel-title {
 		letter-spacing: 8px;
-		word-spacing: 10px;
-		font-weight: 200;
+		word-spacing: 8px;
+		font-weight: 400;
 		text-align: left;
 		font-size: 9px;
 		}
