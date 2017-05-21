@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
   <head>
-    <title>TrainTimes</title>
+    <title></title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
@@ -9,85 +9,42 @@
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
         <!-- Bootstrap JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-        <!-- Bootstrap compiled and minified CSS -->
+         <!-- Bootstrap compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-        <!-- Firebase JavaScript Link -->
+         <!-- Firebase JavaScript Link -->
     <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
-        <!-- Firebase Auth UI -->
+     			<!-- Firebase Auth UI -->
     <script src="https://cdn.firebase.com/libs/firebaseui/2.0.0/firebaseui.js"></script>
     <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.0.0/firebaseui.css" />
-        <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Jura" rel="stylesheet">
-        <!-- Font Awesome -->
+        <!-- Font Awesome CDN-->
+    <script src="https://use.fontawesome.com/c38831e163.js"></script>
+        <!-- Font Awesome Local (copy entire FA directory into project) -->
     <link rel="stylesheet" href="assets/css/fontawesome/css/font-awesome.min.css">
+     <!-- Animate.css -->
+    <link rel="stylesheet" href="assets/css/animate.css">
         <!-- Local CSS link -->
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
   </head>
   <body>
-      <div class="container">
-        <div class="jumbotron text-center">
-          <i class="fa fa-train fa-2x" aria-hidden="true"></i>
-          <!-- <h4>welcome to</h4> -->
+	  <div class="login"></div>    <!-- contains background image with ken burns effect -->
+
+	  <div class="row">
+		  <div class="col-md-12 text-center loginDiv">
+		  	<div class="loginHeader text-center">
+          <i class="fa fa-train fa-3x animated infinite pulse" aria-hidden="true"></i>
           <h1>TRAINTRACK</h1>
-          <h4>a metropolitan transit scheduler</h4>
-        </div> 
-        <div class="row">
-          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-            <div class="panel panel-primary">
-              <div class="panel-heading">
-                <h3 class="panel-title">CURRENT TRAIN SCHEDULE</h3>
-              </div>
-              <div class="panel-body">
-               <table class="table table-hover">
-                  <thead>
-                    <tr>
-                      <th>TRAIN NAME</th>
-                      <th>DESTINATION</th>
-                      <th>FREQUENCY (MIN)</th>
-                      <th>NEXT ARRIVAL</th>
-                      <th>MINUTES AWAY</th>
-                    </tr>
-                  </thead>
-                  <tbody class="currentTable">
-                    <!-- dynamically insert 1 <tr> and 6 <td> -->
-                  </tbody>
-                </table> 
-              </div>
-            </div>  
-            <div class="panel panel-primary">
-              <div class="panel-heading">
-                <h3 class="panel-title">ADD TRAIN</h3>
-              </div>
-              <div class="panel-body">
-                 <form>
-                    <div class="form-group">
-                      <label for="exampleInputEmail1">TRAIN NAME</label>
-                      <input type="text" class="form-control" id="employeeName" placeholder="">
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleInputPassword1">DESTINATION</label>
-                      <input type="text" class="form-control" id="employeeRole" placeholder="">
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleInputPassword1">FIRST TRAIN TIME (HH:mm - MILITARY TIME)</label>
-                      <input type="text" class="form-control" id="employeeStart" placeholder="">
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleInputPassword1">FREQUENCY (MIN)</label>
-                      <input type="number" class="form-control" id="employeeRate" placeholder="">
-                    </div>
-                   
-                    <button type="submit" class="btn btn-primary submit-button hvr-float-shadow ">TRACK<i class="fa fa-train fa-lg" aria-hidden="true"></i>TRAIN</button>
-                  
-                  </form>
-              </div>
-            </div>
-          </div>    <!-- main column -->
-        </div>  <!-- main body row -->
-      </div>  <!-- container -->
-        <!-- moment.js -->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
-        <!-- local JS file link -->
-    <script src="assets/javascript/app.js"></script>
-    </body>  
+		    </div>
+			</div>
+		</div>
+    <div class="container text-center">
+	    <div class="row">
+			  <button type="submit" href="index2.html" class="btn btn-primary authenticate-button hvr-float-shadow"><i class="fa fa-github fa-2x" aria-hidden="true"></i><i class="fa fa-google fa-2x" aria-hidden="true"></i></button>
+			</div>
+		</div>
+
+
+      
+      <!-- local JS file link -->
+	<script src="assets/javascript/app.js"></script>
+  </body>
 </html>
