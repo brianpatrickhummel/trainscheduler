@@ -1,4 +1,5 @@
 
+localStorage.clear();
 
  // Initialize Firebase
   var config = {
