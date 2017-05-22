@@ -10,6 +10,9 @@
 
 }
 
+.form-control, .table {
+	font-family: 'Jura', sans-serif;
+}
 .jumbotron {
 	background-color: black;
 	color: white;
@@ -106,6 +109,11 @@ label {
 	font-weight: 300;
 }
 
+#firstHalfTwo {
+	letter-spacing: -14px;
+	font-family: "Helvetica Neue";
+	font-weight: 400;
+}
 /*-------------Login Screen---------*/
 
 .login { 
@@ -126,6 +134,10 @@ label {
   letter-spacing: -8px;
   word-spacing: 10px;
   margin-top: 0px;
+}
+
+#firstHalf {
+	letter-spacing: -14px;
 }
 
 .authenticate-button {
@@ -187,9 +199,18 @@ label {
 		font-weight: 100;
 		text-align: left;
 	}
+
+
+	#firstHalf {
+		letter-spacing: -10px;
+	}
+
+	#firstHalfTwo {
+	letter-spacing: -9px;
+	font-family: "Helvetica Neue";
+	font-weight: 400;
+	}
 }
-
-
 
 /* Extra small devices (phones, up to 480px) */
 
@@ -229,6 +250,16 @@ label {
 		letter-spacing: 4px;
 		font-size: 10px;
 		font-weight: 200;
+	}
+
+	#firstHalf {
+	letter-spacing: -6px;
+	}
+
+	#firstHalfTwo {
+	letter-spacing: -4px;
+	font-family: "Helvetica Neue";
+	font-weight: 400;
 	}
 }
 
