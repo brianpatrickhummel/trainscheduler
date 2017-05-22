@@ -110,9 +110,9 @@ label {
 }
 
 #firstHalfTwo {
-	letter-spacing: -14px;
+	letter-spacing: -8px;
 	font-family: "Helvetica Neue";
-	font-weight: 400;
+	font-weight: 300;
 }
 /*-------------Login Screen---------*/
 
@@ -133,11 +133,13 @@ label {
   font-weight: 100;
   letter-spacing: -8px;
   word-spacing: 10px;
-  margin-top: 0px;
+  margin-top: 35px;
 }
 
 #firstHalf {
-	letter-spacing: -14px;
+	font-weight: 300;
+	letter-spacing: -13px;
+	font-size: 149px;
 }
 
 .authenticate-button {
@@ -184,6 +186,7 @@ label {
 	.loginHeader > h1 {
 		font-size: 95px;
 		letter-spacing: -6px;
+		margin-top: 30px;
 	}
 	
 	h4 {
@@ -200,15 +203,16 @@ label {
 		text-align: left;
 	}
 
-
 	#firstHalf {
+		font-weight: 300;
 		letter-spacing: -10px;
+		font-size: 94px;
 	}
 
 	#firstHalfTwo {
-	letter-spacing: -9px;
-	font-family: "Helvetica Neue";
-	font-weight: 400;
+		letter-spacing: -7px;
+		font-family: "Helvetica Neue";
+		font-weight: 300;
 	}
 }
 
@@ -216,13 +220,14 @@ label {
 
 @media screen and (max-width: 767px) {
 	.jumbotron h1 {
-		font-size: 63px;
+		font-size: 58px;
 		letter-spacing: -3px;
 	}
 
 	.loginHeader > h1 {
-		font-size: 63px;
+		font-size: 55px;
 		letter-spacing: -3px;
+		margin-top: 20px;
 	}
 	
 	h4 {
@@ -253,13 +258,14 @@ label {
 	}
 
 	#firstHalf {
-	letter-spacing: -6px;
+		font-weight: 300;
+		letter-spacing: -5px;
+		font-size: 54px;
 	}
-
 	#firstHalfTwo {
-	letter-spacing: -4px;
-	font-family: "Helvetica Neue";
-	font-weight: 400;
+		letter-spacing: -4px;
+		font-family: "Helvetica Neue";
+		font-weight: 300;
 	}
 }
 
