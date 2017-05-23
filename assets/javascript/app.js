@@ -56,7 +56,7 @@ $('.submit-button').on("click", function(event) {
   $('#firstTrain').val("");
   $('#frequency').val("");
 });
-public static void signOut() {
+signOut() {
     // Firebase sign out
     mAuth.signOut();
 
