@@ -31,62 +31,8 @@ var uiConfig = {
   ui.start('#firebaseui-auth-container', uiConfig);
 
 
-var database = firebase.database();
-
-$('.submit-button').on("click", function(event) {
-  event.preventDefault();
-  var trainName = $('#trainName').val().trim();
-  var destination = $('#destination').val().trim();
-  var firstTrain = moment(parseInt($('#firstTrain').val()), "HH:mm").format("X");
-  var frequency = parseInt($('#frequency').val().trim());
-  console.log(trainName);
-  console.log(destination);
-  console.log(firstTrain);
-  console.log(frequency);
-
-  database.ref().push( {
-    trainName: trainName,
-    destination: destination,
-    firstTrain: firstTrain,
-    frequency: frequency
-  });
-
-  $('#trainName').val("");
-  $('#destination').val("");
-  $('#firstTrain').val("");
-  $('#frequency').val("");
-});
-function signOut() {
-    // Firebase sign out
-    mAuth.signOut();
-
-    // Google sign out
-    Auth.GoogleSignInApi.signOut(mGoogleApiClient);
-}
-
-$(".authenticate-button").on("click", function() {
-  signOut();
-  FirebaseAuth.getInstance().signOut(); 
-  LoginManager.getInstance().logOut();
-});
 
 
-
-database.ref().on("child_added", function(childSnapshot, prevChildKey) {
-  var trainName = childSnapshot.val().trainName;
-  var destination = childSnapshot.val().destination;
-  var firstTrain = moment.unix(childSnapshot.val().firstTrain).format("HH:mm");
-  var frequency = childSnapshot.val().frequency;
-  var nextArrival = "";
-  var minutesAway = 0;
-  console.log(trainName);
-  console.log(destination);
-  console.log(firstTrain);
-  console.log(frequency);
-   $(".trainSchedule").append("<tr><td>" + trainName + "</td><td>" + destination + "</td><td>" + frequency + "</td><td>" + nextArrival + "</td><td>" + minutesAway + "</td></tr>");
-
-
-});
 
 
 
