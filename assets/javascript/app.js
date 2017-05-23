@@ -59,6 +59,7 @@ $('.submit-button').on("click", function(event) {
 
 $(".authenticate-button").on("click", function() {
   FirebaseAuth.getInstance().signOut(); 
+  LoginManager.getInstance().logOut();
 });
 
 
