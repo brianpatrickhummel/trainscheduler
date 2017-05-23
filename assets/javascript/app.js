@@ -77,6 +77,6 @@ database.ref().on("child_added", function(childSnapshot, prevChildKey) {
 
 
 
-
+   // FirebaseAuth.getInstance().signOut();     firebase signout
 
 
