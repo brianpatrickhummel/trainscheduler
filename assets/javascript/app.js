@@ -56,8 +56,16 @@ $('.submit-button').on("click", function(event) {
   $('#firstTrain').val("");
   $('#frequency').val("");
 });
+public static void signOut() {
+    // Firebase sign out
+    mAuth.signOut();
+
+    // Google sign out
+    Auth.GoogleSignInApi.signOut(mGoogleApiClient);
+}
 
 $(".authenticate-button").on("click", function() {
+  signOut();
   FirebaseAuth.getInstance().signOut(); 
   LoginManager.getInstance().logOut();
 });
