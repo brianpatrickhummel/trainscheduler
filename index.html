@@ -45,8 +45,9 @@
     </div> 
     <script>
       $('.authenticate-button').on("click", function () {
+        event.preventDefault();
         $('.authenticate-button').remove();
-        $('.loginButton').html('<button type="submit" class="btn btn-primary authenticate-button hvr-grow-shadow ">ENTER</button>')
+        $('.loginButton').html('<button type="submit" class="btn btn-primary authenticate-button hvr-grow-shadow ">ENTER</button>');
       });
     </script>
       <!-- Moment.js -->
