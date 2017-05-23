@@ -11,9 +11,7 @@ var config = {
 firebase.initializeApp(config);
 
   //Github provider object for authentication
-$('.authenticate-button').on("click", function (event) {
-	event.preventDefault();
-  $('.authenticate-button').remove();
+
 	var uiConfig = {
     signInSuccessUrl: 'https://brianpatrickhummel.github.io/week7-trainscheduler/index2.html',
     signInOptions: [
@@ -31,7 +29,7 @@ $('.authenticate-button').on("click", function (event) {
     var ui = new firebaseui.auth.AuthUI(firebase.auth());
     // The start method will wait until the DOM is loaded.
     ui.start('#firebaseui-auth-container', uiConfig);
-});
+
 
 var database = firebase.database();
 
