@@ -1,3 +1,12 @@
+function logUserOut(){
+      firebase.auth().signOut().then(function() {
+        console.log("Sign-out successful.");
+      }, function(error) {
+        console.log("An error happened.");
+      });
+    }
+
+
 // Initialize Firebase
 var config = {
     apiKey: "AIzaSyDM8wo0QlZTF5UC1_X1bOKbXlJQLutzlE8",
@@ -48,5 +57,14 @@ database.ref().on("child_added", function(childSnapshot, prevChildKey) {
   console.log(frequency);
    $(".trainSchedule").append("<tr><td>" + trainName + "</td><td>" + destination + "</td><td>" + frequency + "</td><td>" + nextArrival + "</td><td>" + minutesAway + "</td></tr>");
 
-
 });
+
+
+$(".authenticate-button").on("click", function() {
+  localStorage.clear();
+  sessionStorage.clear();
+  logUserOut();
+});
+
+
+
