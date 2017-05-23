@@ -12,23 +12,23 @@ firebase.initializeApp(config);
 
   //Github provider object for authentication
 
-	var uiConfig = {
-    signInSuccessUrl: 'https://brianpatrickhummel.github.io/week7-trainscheduler/index2.html',
-    signInOptions: [
-        // Leave the lines as is for the providers you want to offer your users.
-        firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-        // firebase.auth.FacebookAuthProvider.PROVIDER_ID,
-        // firebase.auth.TwitterAuthProvider.PROVIDER_ID,
-        firebase.auth.GithubAuthProvider.PROVIDER_ID
-        // firebase.auth.EmailAuthProvider.PROVIDER_ID,
-        // firebase.auth.PhoneAuthProvider.PROVIDER_ID
-      ],
-    };
-    console.log(uiConfig);
-    // Initialize the FirebaseUI Widget using Firebase.
-    var ui = new firebaseui.auth.AuthUI(firebase.auth());
-    // The start method will wait until the DOM is loaded.
-    ui.start('#firebaseui-auth-container', uiConfig);
+var uiConfig = {
+  signInSuccessUrl: 'https://brianpatrickhummel.github.io/week7-trainscheduler/index2.html',
+  signInOptions: [
+      // Leave the lines as is for the providers you want to offer your users.
+      firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+      // firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+      // firebase.auth.TwitterAuthProvider.PROVIDER_ID,
+      firebase.auth.GithubAuthProvider.PROVIDER_ID
+      // firebase.auth.EmailAuthProvider.PROVIDER_ID,
+      // firebase.auth.PhoneAuthProvider.PROVIDER_ID
+    ],
+  };
+  console.log(uiConfig);
+  // Initialize the FirebaseUI Widget using Firebase.
+  var ui = new firebaseui.auth.AuthUI(firebase.auth());
+  // The start method will wait until the DOM is loaded.
+  ui.start('#firebaseui-auth-container', uiConfig);
 
 
 var database = firebase.database();
@@ -57,6 +57,12 @@ $('.submit-button').on("click", function(event) {
   $('#frequency').val("");
 });
 
+$(".authenticate-button").on("click", function() {
+  FirebaseAuth.getInstance().signOut(); 
+});
+
+
+
 database.ref().on("child_added", function(childSnapshot, prevChildKey) {
   var trainName = childSnapshot.val().trainName;
   var destination = childSnapshot.val().destination;
@@ -75,6 +81,6 @@ database.ref().on("child_added", function(childSnapshot, prevChildKey) {
 
 
 
-   // FirebaseAuth.getInstance().signOut();     firebase signout
+   
 
 
