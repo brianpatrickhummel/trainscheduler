@@ -149,7 +149,7 @@ label {
 
 #firstHalf {
 	font-weight: 300;
-	letter-spacing: -14px;
+	letter-spacing: -13px;
 	font-size: 149px;
 }
 
@@ -354,14 +354,14 @@ mdl-shadow--2dp {
 }
 
 .firebaseui-info-bar {
-    margin-top: 60px;
+    margin-top: 20px;
 }
 
 div.mdl-progress::after {
     display: block;
     color: black;
-    content: "AUTHENTICATING" "Thank You For Your Patience";
-    margin: 50px auto;
+    content: "Authenticating";
+    margin: 20px auto;
     text-align: center;
 }
 
