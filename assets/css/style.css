@@ -359,9 +359,8 @@ mdl-shadow--2dp {
 
 div.mdl-progress::after {
     display: block;
-    color: white;
-    background-color: black;
-    content: "Authenticating";
+    color: black;
+    content: "AUTHENTICATING" <br> "Thank You For Your Patience";
     margin: 50px auto;
     text-align: center;
 }
