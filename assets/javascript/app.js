@@ -15,7 +15,7 @@ $('.authenticate-button').on("click", function (event) {
 	event.preventDefault();
   $('.authenticate-button').remove();
 	var uiConfig = {
-    signInSuccessUrl: 'index2.html',
+    signInSuccessUrl: 'https://brianpatrickhummel.github.io/week7-trainscheduler/index2.html',
     signInOptions: [
         // Leave the lines as is for the providers you want to offer your users.
         firebase.auth.GoogleAuthProvider.PROVIDER_ID,
