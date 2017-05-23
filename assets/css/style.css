@@ -31,6 +31,10 @@ thead {
 	margin: 10px;
 }
 
+.table {
+    margin-bottom: 0px; 
+	}
+
 .panel, .panel-primary {
 	margin-bottom: 0;
 	margin-top: 18px;
@@ -45,6 +49,11 @@ thead {
 	color: black;
 	font-weight: 300;
 }
+
+.panel {
+	margin-bottom: 20px;
+}
+
 .panel-body {
 	overflow: scroll;
 }
@@ -87,6 +96,8 @@ i {
 	letter-spacing: 4px;
 	font-size: 14px;
 	font-weight: 100;
+	margin-top: 10px;
+	margin-right: 15px;
 }
 
 h4 {
@@ -210,6 +221,10 @@ label {
 		font-family: "Helvetica Neue";
 		font-weight: 300;
 	}
+
+	.form-control {
+		font-size: 12px;
+	}
 }
 
 /* Extra small devices (phones, up to 480px) */
@@ -247,7 +262,7 @@ label {
 		font-weight: 400;
 	}
 
-	.submit-button {
+	.submit-button, .authenticate-button{
 		letter-spacing: 4px;
 		font-size: 10px;
 		font-weight: 200;
@@ -262,6 +277,10 @@ label {
 		letter-spacing: -4px;
 		font-family: "Helvetica Neue";
 		font-weight: 300;
+	}
+
+	.form-control {
+		font-size: 10px;
 	}
 }
 
