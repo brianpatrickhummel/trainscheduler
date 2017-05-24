@@ -24,12 +24,8 @@ $('.submit-button').on("click", function(event) {
   event.preventDefault();
   var trainName = $('#trainName').val().trim();
   var destination = $('#destination').val().trim();
-  var firstTrain = moment(parseInt($('#firstTrain').val()), "HH:mm").format("X");
+  var firstTrain = moment(($('#firstTrain').val()), "HH:mm").format("X");
   var frequency = parseInt($('#frequency').val().trim());
-  console.log(trainName);
-  console.log(destination);
-  console.log(firstTrain);
-  console.log(frequency);
 
   database.ref().push( {
     trainName: trainName,
@@ -45,16 +41,31 @@ $('.submit-button').on("click", function(event) {
 });
 
 database.ref().on("child_added", function(childSnapshot, prevChildKey) {
-  var trainName = childSnapshot.val().trainName;
-  var destination = childSnapshot.val().destination;
+  var trainName = (childSnapshot.val().trainName).toUpperCase();
+  var destination = (childSnapshot.val().destination).toUpperCase();
   var firstTrain = moment.unix(childSnapshot.val().firstTrain).format("HH:mm");
   var frequency = childSnapshot.val().frequency;
   var nextArrival = "";
   var minutesAway = 0;
-  console.log(trainName);
-  console.log(destination);
-  console.log(firstTrain);
-  console.log(frequency);
+
+  var firstTimeConverted = moment(firstTrain, "HH:mm").subtract(1, "years");
+  var currentTime = moment();
+    console.log("CURRENT TIME: " + moment(currentTime).format("HH:mm"));
+
+    // Difference between the times
+    var diffTime = moment().diff(moment(firstTimeConverted), "minutes");
+
+    // Time apart (remainder)
+    var tRemainder = diffTime % frequency;
+   
+    // Minute Until Train
+    minutesAway = frequency - tRemainder;
+    console.log("MINUTES TILL TRAIN: " + minutesAway);
+
+    // Next Train
+    var b = moment().add(minutesAway, "minutes");
+    nextArrival = moment(b).format("HH:mm");
+  
    $(".trainSchedule").append("<tr><td>" + trainName + "</td><td>" + destination + "</td><td>" + frequency + "</td><td>" + nextArrival + "</td><td>" + minutesAway + "</td></tr>");
 
 });
