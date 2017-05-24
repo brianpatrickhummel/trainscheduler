@@ -154,7 +154,7 @@ label {
 }
 
 .loginDiv {
-	margin-top: 10em;
+	margin-top: 150px;
 }
 
 .login {
@@ -196,6 +196,10 @@ label {
 		margin-top: 30px;
 	}
 	
+	.loginDiv {
+		margin-top: 100px;
+	}
+
 	h4 {
 		letter-spacing: 10px;
 		word-spacing: 14px;
@@ -231,8 +235,9 @@ label {
 
 @media screen and (max-width: 767px) {
 	
-	.login-Div {
-			margin-top: 10px
+	
+	.loginDiv {
+		margin-top: 50px;
 	}
 
 	.jumbotron h1 {
@@ -292,10 +297,10 @@ label {
 
 /*---------iPhone Landscape-------------*/
 
-@media only screen and (min-device-width : 414px) and (max-device-width : 667px) {
+@media screen and (min-device-width : 414px) and (max-device-width : 667px) {
 	
-	.login-Div {
-			margin-top: 10px
+	.loginDiv {
+			margin-top: 20px
 	}
 }
 
