@@ -64,7 +64,7 @@ database.ref().on("child_added", function(childSnapshot, prevChildKey) {
   var b = moment().add(minutesAway, "minutes");
   var nextArrival = moment(b).format("HH:mm");
 
-  $(".trainSchedule").prepend("<tr id="trainName"><td>" + trainName + "</td><td>" + destination + "</td><td>" + frequency + "</td><td>" + nextArrival + "</td><td>" + minutesAway + "</td><button id="remove"</tr>");
+$(".trainSchedule").prepend("<tr><td>" + trainName + "</td><td>" + destination + "</td><td>" + frequency + "</td><td>" + nextArrival + "</td><td>" + minutesAway + "</td></tr>");
 
 });
 
