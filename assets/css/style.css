@@ -230,6 +230,11 @@ label {
 /* Extra small devices (phones, up to 480px) */
 
 @media screen and (max-width: 767px) {
+	
+	.login-Div {
+			margin-top: 10px
+	}
+
 	.jumbotron h1 {
 		font-size: 58px;
 		letter-spacing: -3px;
@@ -283,6 +288,18 @@ label {
 		font-size: 10px;
 	}
 }
+
+
+/*---------iPhone Landscape-------------*/
+
+@media only screen and (min-device-width : 414px) and (max-device-width : 667px) {
+	
+	.login-Div {
+			margin-top: 10px
+	}
+}
+
+
 
 
 /*-----------Hover.css--- Grow Shadow----Log In Button--------- */
@@ -349,6 +366,10 @@ label {
   /* move the element down by 5px (it will stay in place because it's attached to the element that also moves up 5px) */
 }
 
+
+
+/*----------Firebase Login Widget-----------------
+*/
 mdl-shadow--2dp {
     box-shadow: none;
 }

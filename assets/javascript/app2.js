@@ -45,28 +45,26 @@ database.ref().on("child_added", function(childSnapshot, prevChildKey) {
   var destination = (childSnapshot.val().destination).toUpperCase();
   var firstTrain = moment.unix(childSnapshot.val().firstTrain).format("HH:mm");
   var frequency = childSnapshot.val().frequency;
-  var nextArrival = "";
-  var minutesAway = 0;
 
   var firstTimeConverted = moment(firstTrain, "HH:mm").subtract(1, "years");
   var currentTime = moment();
-    console.log("CURRENT TIME: " + moment(currentTime).format("HH:mm"));
+  console.log("CURRENT TIME: " + moment(currentTime).format("HH:mm"));
 
-    // Difference between the times
-    var diffTime = moment().diff(moment(firstTimeConverted), "minutes");
+  // Difference between the times
+  var diffTime = moment().diff(moment(firstTimeConverted), "minutes");
 
-    // Time apart (remainder)
-    var tRemainder = diffTime % frequency;
-   
-    // Minute Until Train
-    minutesAway = frequency - tRemainder;
-    console.log("MINUTES TILL TRAIN: " + minutesAway);
+  // Time apart (remainder)
+  var tRemainder = diffTime % frequency;
+ 
+  // Minute Until Train
+  var minutesAway = frequency - tRemainder;
+  console.log("MINUTES TILL TRAIN: " + minutesAway);
 
-    // Next Train
-    var b = moment().add(minutesAway, "minutes");
-    nextArrival = moment(b).format("HH:mm");
-  
-   $(".trainSchedule").prepend("<tr><td>" + trainName + "</td><td>" + destination + "</td><td>" + frequency + "</td><td>" + nextArrival + "</td><td>" + minutesAway + "</td></tr>");
+  // Next Train
+  var b = moment().add(minutesAway, "minutes");
+  var nextArrival = moment(b).format("HH:mm");
+
+  $(".trainSchedule").prepend("<tr id="trainName"><td>" + trainName + "</td><td>" + destination + "</td><td>" + frequency + "</td><td>" + nextArrival + "</td><td>" + minutesAway + "</td><button id="remove"</tr>");
 
 });
 
