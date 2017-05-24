@@ -197,7 +197,7 @@ label {
 	}
 	
 	.loginDiv {
-		margin-top: 100px;
+		margin-top: 85px;
 	}
 
 	h4 {
@@ -237,7 +237,7 @@ label {
 	
 	
 	.loginDiv {
-		margin-top: 50px;
+		margin-top: 25px;
 	}
 
 	.jumbotron h1 {
@@ -293,18 +293,6 @@ label {
 		font-size: 10px;
 	}
 }
-
-
-/*---------iPhone Landscape-------------*/
-
-@media screen and (min-device-width : 414px) and (max-device-width : 667px) {
-	
-	.loginDiv {
-			margin-top: 20px
-	}
-}
-
-
 
 
 /*-----------Hover.css--- Grow Shadow----Log In Button--------- */
