@@ -40,6 +40,7 @@ $(".authenticate-button").on("click", function () {
   logUserOut();
   localStorage.clear();
   sessionStorage.clear();
+  window.location.href = "https://brianpatrickhummel.github.io/trainscheduler";
 });
 
 function logUserOut() {
