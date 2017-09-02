@@ -1,15 +1,13 @@
 function logUserOut() {
-  firebase
-    .auth()
-    .signOut()
-    .then(
-      function() {
-        console.log("Sign-out successful.");
-      },
-      function(error) {
-        console.log("An error happened.");
-      }
-    );
+  var user = firebase.auth().currentUser;
+  
+  user.delete().then(function() {
+    FirebaseAuth.getInstance().signOut();
+    console.log("successfully logged out");
+  }).catch(function(error) {
+    console.log("Error on sign-out: " + error);
+  });
+
 }
 
 // Initialize Firebase
@@ -25,7 +23,7 @@ firebase.initializeApp(config);
 
 var database = firebase.database();
 
-$(".submit-button").on("click", function(event) {
+$(".submit-button").on("click", function (event) {
   event.preventDefault();
   var trainName = $("#trainName")
     .val()
@@ -36,8 +34,8 @@ $(".submit-button").on("click", function(event) {
   var firstTrain = moment($("#firstTrain").val(), "HH:mm").format("X");
   var frequency = parseInt(
     $("#frequency")
-      .val()
-      .trim()
+    .val()
+    .trim()
   );
 
   database.ref().push({
@@ -53,7 +51,7 @@ $(".submit-button").on("click", function(event) {
   $("#frequency").val("");
 });
 
-database.ref().on("child_added", function(childSnapshot, prevChildKey) {
+database.ref().on("child_added", function (childSnapshot, prevChildKey) {
   var trainName = childSnapshot.val().trainName.toUpperCase();
   var destination = childSnapshot.val().destination.toUpperCase();
   var firstTrain = moment.unix(childSnapshot.val().firstTrain).format("HH:mm");
@@ -79,21 +77,22 @@ database.ref().on("child_added", function(childSnapshot, prevChildKey) {
 
   $(".trainSchedule").prepend(
     "<tr><td>" +
-      trainName +
-      "</td><td>" +
-      destination +
-      "</td><td>" +
-      frequency +
-      "</td><td>" +
-      nextArrival +
-      "</td><td>" +
-      minutesAway +
-      "</td></tr>"
+    trainName +
+    "</td><td>" +
+    destination +
+    "</td><td>" +
+    frequency +
+    "</td><td>" +
+    nextArrival +
+    "</td><td>" +
+    minutesAway +
+    "</td></tr>"
   );
 });
 
-$(".authenticate-button").on("click", function() {
+$(".authenticate-button").on("click", function () {
+  event.preventDefault();
+  logUserOut();
   localStorage.clear();
   sessionStorage.clear();
-  logUserOut();
 });
