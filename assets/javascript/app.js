@@ -11,8 +11,6 @@ firebase.initializeApp(config);
 
 
 
-
-
 //=============  Firebase Authentication =============
 
 var uiConfig = {
@@ -33,7 +31,7 @@ var ui = new firebaseui.auth.AuthUI(firebase.auth());
 ui.start("#firebaseui-auth-container", uiConfig);
 
 
-// Firebase User Logout
+// Firebase User Logout - Deletes Firebase Accout
 
 $(".authenticate-button").on("click", function () {
   event.preventDefault();
@@ -44,14 +42,13 @@ $(".authenticate-button").on("click", function () {
 
 function logUserOut() {
   var user = firebase.auth().currentUser;
-  
   if (user) {
     user.delete().then(function() {
       console.log("User successfully logged out");
       window.location.href = "https://brianpatrickhummel.github.io/trainscheduler";
-}).catch(function(error) {
-      console.log("Error during sign-out: " + error);
-});
+    }).catch(function(error) {
+          console.log("Error during sign-out: " + error);
+    });
   } else {
     console.log("No user is currently signed in");
   }
@@ -59,9 +56,7 @@ function logUserOut() {
 
 
 
-
-
-// ===========  Firebase Data =============
+// ===========  Firebase DataBase =============
 
 var database = firebase.database();
 
