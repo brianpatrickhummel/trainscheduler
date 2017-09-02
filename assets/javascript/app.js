@@ -27,20 +27,19 @@ var uiConfig = {
     // firebase.auth.PhoneAuthProvider.PROVIDER_ID
   ]
 };
-// console.log(uiConfig);
-
 // Initialize the FirebaseUI Widget using Firebase.
 var ui = new firebaseui.auth.AuthUI(firebase.auth());
 // The start method will wait until the DOM is loaded.
 ui.start("#firebaseui-auth-container", uiConfig);
 
 
+// Firebase User Logout
+
 $(".authenticate-button").on("click", function () {
   event.preventDefault();
   logUserOut();
   localStorage.clear();
   sessionStorage.clear();
-  window.location.href = "https://brianpatrickhummel.github.io/trainscheduler";
 });
 
 function logUserOut() {
@@ -49,6 +48,7 @@ function logUserOut() {
   if (user) {
     user.delete().then(function() {
       console.log("User successfully logged out");
+      window.location.href = "https://brianpatrickhummel.github.io/trainscheduler";
 }).catch(function(error) {
       console.log("Error during sign-out: " + error);
 });
