@@ -1,14 +1,4 @@
-function logUserOut() {
-  var user = firebase.auth().currentUser;
-  
-  user.delete().then(function() {
-    FirebaseAuth.getInstance().signOut();
-    console.log("successfully logged out");
-  }).catch(function(error) {
-    console.log("Error on sign-out: " + error);
-  });
 
-}
 
 // Initialize Firebase
 var config = {
@@ -90,9 +80,3 @@ database.ref().on("child_added", function (childSnapshot, prevChildKey) {
   );
 });
 
-$(".authenticate-button").on("click", function () {
-  event.preventDefault();
-  logUserOut();
-  localStorage.clear();
-  sessionStorage.clear();
-});

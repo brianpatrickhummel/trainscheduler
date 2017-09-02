@@ -29,3 +29,23 @@ console.log(uiConfig);
 var ui = new firebaseui.auth.AuthUI(firebase.auth());
 // The start method will wait until the DOM is loaded.
 ui.start("#firebaseui-auth-container", uiConfig);
+
+
+$(".authenticate-button").on("click", function () {
+  event.preventDefault();
+  logUserOut();
+  localStorage.clear();
+  sessionStorage.clear();
+});
+
+function logUserOut() {
+  var user = firebase.auth().currentUser;
+  
+  user.delete().then(function() {
+    FirebaseAuth.getInstance().signOut();
+    console.log("successfully logged out");
+  }).catch(function(error) {
+    console.log("Error on sign-out: " + error);
+  });
+
+}
