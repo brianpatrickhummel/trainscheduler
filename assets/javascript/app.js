@@ -24,7 +24,8 @@ var uiConfig = {
     // firebase.auth.PhoneAuthProvider.PROVIDER_ID
   ]
 };
-console.log(uiConfig);
+// console.log(uiConfig);
+
 // Initialize the FirebaseUI Widget using Firebase.
 var ui = new firebaseui.auth.AuthUI(firebase.auth());
 // The start method will wait until the DOM is loaded.
@@ -41,11 +42,13 @@ $(".authenticate-button").on("click", function () {
 function logUserOut() {
   var user = firebase.auth().currentUser;
   
-  user.delete().then(function() {
-    FirebaseAuth.getInstance().signOut();
-    console.log("successfully logged out");
-  }).catch(function(error) {
-    console.log("Error on sign-out: " + error);
-  });
-
+  if (user) {
+    user.delete().then(function() {
+      console.log("User successfully logged out");
+}).catch(function(error) {
+      console.log("Error during sign-out: " + error);
+});
+  } else {
+    console.log("No user is currently signed in");
+  }
 }

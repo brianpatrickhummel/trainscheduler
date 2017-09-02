@@ -13,6 +13,7 @@ firebase.initializeApp(config);
 
 var database = firebase.database();
 
+// Gather information from Form when Track Train button clicked
 $(".submit-button").on("click", function (event) {
   event.preventDefault();
   var trainName = $("#trainName")
@@ -27,20 +28,21 @@ $(".submit-button").on("click", function (event) {
     .val()
     .trim()
   );
-
+  // Send Form data to Firebase Database
   database.ref().push({
     trainName: trainName,
     destination: destination,
     firstTrain: firstTrain,
     frequency: frequency
   });
-
+  // Clear Form values
   $("#trainName").val("");
   $("#destination").val("");
   $("#firstTrain").val("");
   $("#frequency").val("");
 });
 
+// When a new entry is added to Firebase DB, gather DB data and render in DOM
 database.ref().on("child_added", function (childSnapshot, prevChildKey) {
   var trainName = childSnapshot.val().trainName.toUpperCase();
   var destination = childSnapshot.val().destination.toUpperCase();
@@ -49,7 +51,6 @@ database.ref().on("child_added", function (childSnapshot, prevChildKey) {
 
   var firstTimeConverted = moment(firstTrain, "HH:mm").subtract(1, "years");
   var currentTime = moment();
-  console.log("CURRENT TIME: " + moment(currentTime).format("HH:mm"));
 
   // Difference between the times
   var diffTime = moment().diff(moment(firstTimeConverted), "minutes");
@@ -59,7 +60,6 @@ database.ref().on("child_added", function (childSnapshot, prevChildKey) {
 
   // Minute Until Train
   var minutesAway = frequency - tRemainder;
-  console.log("MINUTES TILL TRAIN: " + minutesAway);
 
   // Next Train
   var b = moment().add(minutesAway, "minutes");
