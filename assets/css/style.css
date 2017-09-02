@@ -1,30 +1,32 @@
 * {
 	box-sizing: border-box;
-	font-family: 'Jura', sans-serif;
+	font-family: "Jura", sans-serif;
 	letter-spacing: 1px;
 }
 
 @font-face {
-  font-family: 'cassannet_plusregular';
-  src: url('../fonts/Cassannet_Plus_Regular.otf');
-
+	font-family: "cassannet_plusregular";
+	src: url("../fonts/Cassannet_Plus_Regular.otf");
 }
 
-.form-control, .table {
-	font-family: 'Jura', sans-serif;
+.form-control,
+.table {
+	font-family: "Jura", sans-serif;
 }
+
 .jumbotron {
 	background-color: black;
 	color: white;
 	position: relative;
 	margin: 0;
 }
+
 .jumbotron h1 {
-  font-size: 150px;
-  font-weight: 100;
-  letter-spacing: -8px;
-  word-spacing: 10px;
-  margin-top: 0px;
+	font-size: 150px;
+	font-weight: 100;
+	letter-spacing: -8px;
+	word-spacing: 10px;
+	margin-top: 0px;
 }
 
 thead {
@@ -32,15 +34,17 @@ thead {
 }
 
 .table {
-    margin-bottom: 0px; 
-	}
+	margin-bottom: 0px;
+}
 
-.panel, .panel-primary {
+.panel,
+.panel-primary {
 	margin-bottom: 0;
 	margin-top: 18px;
 }
 
-.panel-primary, .form-control{
+.panel-primary,
+.form-control {
 	border-color: black;
 }
 
@@ -58,7 +62,7 @@ thead {
 	overflow: scroll;
 }
 
-.panel-primary > .panel-heading {
+.panel-primary>.panel-heading {
 	background-color: black;
 	border-color: black;
 }
@@ -73,26 +77,27 @@ thead {
 }
 
 .btn:hover {
-	background-color: #2E281D;
+	background-color: #2e281d;
 }
 
 .btn:active:focus {
 	outline: none;
-	background-color: #2E281D;
-
+	background-color: #2e281d;
 }
+
 .btn:focus {
 	outline: none;
-	background-color: #2E281D;
+	background-color: #2e281d;
 }
 
 i {
 	margin: 5px;
 	margin-right: 6.5px;
-	color:white;
+	color: white;
 }
 
-.submit-button, .authenticate-button {
+.submit-button,
+.authenticate-button {
 	letter-spacing: 4px;
 	font-size: 14px;
 	font-weight: 100;
@@ -106,9 +111,9 @@ h4 {
 	font-weight: 100;
 	text-align: center;
 	font-size: 14px;
-	}
+}
 
-.panel-title  {
+.panel-title {
 	letter-spacing: 10px;
 	word-spacing: 14px;
 	font-weight: 100;
@@ -125,12 +130,15 @@ label {
 	font-family: "Helvetica Neue";
 	font-weight: 300;
 }
+
+
 /*-------------Login Screen---------*/
 
-.login { 
+.login {
 	height: 100%;
 	width: 100%;
-	position: absolute;                    /*login screen body*/
+	position: absolute;
+	/*login screen body*/
 	background: url(../images/engine.jpg) no-repeat center center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
@@ -138,13 +146,13 @@ label {
 	background-size: cover;
 }
 
-.loginHeader > h1 {
-	color:white;
+.loginHeader>h1 {
+	color: white;
 	font-size: 150px;
-  font-weight: 100;
-  letter-spacing: -8px;
-  word-spacing: 10px;
-  margin-top: 35px;
+	font-weight: 100;
+	letter-spacing: -8px;
+	word-spacing: 10px;
+	margin-top: 35px;
 }
 
 #firstHalf {
@@ -158,26 +166,27 @@ label {
 }
 
 .login {
-  animation: kenburns 20s infinite;
+	animation: kenburns 20s infinite;
 }
 
 @keyframes kenburns {
-    0% {
-      opacity: 0;
-    }
-    5% {
-      opacity: 1;
-    }
-    95% {
-        transform: scale3d(1.5, 1.5, 1.5) translate3d(-50px, -50px, 0px);
-        animation-timing-function: ease-in;
-        opacity: 1;
-    }
-    100% {
-        transform: scale3d(2, 2, 2) translate3d(-70px, -80px, 0px);
-        opacity: 0;
-    }
+	0% {
+		opacity: 0;
+	}
+	5% {
+		opacity: 1;
+	}
+	95% {
+		transform: scale3d(1.5, 1.5, 1.5) translate3d(-50px, -50px, 0px);
+		animation-timing-function: ease-in;
+		opacity: 1;
+	}
+	100% {
+		transform: scale3d(2, 2, 2) translate3d(-70px, -80px, 0px);
+		opacity: 0;
+	}
 }
+
 
 /*----------Media Queries-----------*/
 
@@ -189,68 +198,57 @@ label {
 		font-size: 95px;
 		letter-spacing: -6px;
 	}
-
-	.loginHeader > h1 {
+	.loginHeader>h1 {
 		font-size: 95px;
 		letter-spacing: -6px;
 		margin-top: 30px;
 	}
-	
 	.loginDiv {
 		margin-top: 85px;
 	}
-
 	h4 {
 		letter-spacing: 10px;
 		word-spacing: 14px;
 		font-weight: 100;
 		text-align: center;
 	}
-
-	.panel-title  {
+	.panel-title {
 		letter-spacing: 10px;
 		word-spacing: 14px;
 		font-weight: 100;
 		text-align: left;
 	}
-
 	#firstHalf {
 		font-weight: 300;
 		letter-spacing: -10px;
 		font-size: 94px;
 	}
-
 	#firstHalfTwo {
 		letter-spacing: -7px;
 		font-family: "Helvetica Neue";
 		font-weight: 300;
 	}
-
 	.form-control {
 		font-size: 12px;
 	}
 }
 
+
 /* Extra small devices (phones, up to 480px) */
 
 @media screen and (max-width: 767px) {
-	
-	
 	.loginDiv {
 		margin-top: 25px;
 	}
-
 	.jumbotron h1 {
 		font-size: 58px;
 		letter-spacing: -3px;
 	}
-
-	.loginHeader > h1 {
+	.loginHeader>h1 {
 		font-size: 55px;
 		letter-spacing: -3px;
 		margin-top: 20px;
 	}
-	
 	h4 {
 		letter-spacing: 10px;
 		word-spacing: 12px;
@@ -258,26 +256,24 @@ label {
 		text-align: center;
 		font-size: 14px;
 	}
-
- .panel-title {
+	.panel-title {
 		letter-spacing: 6px;
 		word-spacing: 8px;
 		font-weight: 400;
 		text-align: left;
 		font-size: 9px;
 	}
-
-	.table>thead>tr>th, label{
-		font-size:9px;
+	.table>thead>tr>th,
+	label {
+		font-size: 9px;
 		font-weight: 400;
 	}
-
-	.submit-button, .authenticate-button{
+	.submit-button,
+	.authenticate-button {
 		letter-spacing: 4px;
 		font-size: 10px;
 		font-weight: 200;
 	}
-
 	#firstHalf {
 		font-weight: 300;
 		letter-spacing: -5px;
@@ -288,7 +284,6 @@ label {
 		font-family: "Helvetica Neue";
 		font-weight: 300;
 	}
-
 	.form-control {
 		font-size: 10px;
 	}
@@ -296,89 +291,99 @@ label {
 
 
 /*-----------Hover.css--- Grow Shadow----Log In Button--------- */
+
 .hvr-grow-shadow {
-  display: inline-block;
-  vertical-align: middle;
-  -webkit-transform: perspective(1px) translateZ(0);
-  transform: perspective(1px) translateZ(0);
-  box-shadow: 0 0 1px transparent;
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-  -webkit-transition-property: box-shadow, transform;
-  transition-property: box-shadow, transform;
-}
-.hvr-grow-shadow:hover, .hvr-grow-shadow:focus, .hvr-grow-shadow:active {
-  box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
-  -webkit-transform: scale(1.1);
-  transform: scale(1.1);
+	display: inline-block;
+	vertical-align: middle;
+	-webkit-transform: perspective(1px) translateZ(0);
+	transform: perspective(1px) translateZ(0);
+	box-shadow: 0 0 1px transparent;
+	-webkit-transition-duration: 0.3s;
+	transition-duration: 0.3s;
+	-webkit-transition-property: box-shadow, transform;
+	transition-property: box-shadow, transform;
 }
 
+.hvr-grow-shadow:hover,
+.hvr-grow-shadow:focus,
+.hvr-grow-shadow:active {
+	box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5);
+	-webkit-transform: scale(1.1);
+	transform: scale(1.1);
+}
 
-/*------------Hover.css----Float Shadow----Submit Button------------------*/    
 
+/*------------Hover.css----Float Shadow----Submit Button------------------*/
 
 .hvr-float-shadow {
-  display: inline-block;
-  vertical-align: middle;
-  -webkit-transform: perspective(1px) translateZ(0);
-  transform: perspective(1px) translateZ(0);
-  box-shadow: 0 0 1px transparent;
-  position: relative;
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-  -webkit-transition-property: transform;
-  transition-property: transform;
-}
-.hvr-float-shadow:before {
-  pointer-events: none;
-  position: absolute;
-  z-index: -1;
-  content: '';
-  top: 100%;
-  left: 5%;
-  height: 10px;
-  width: 90%;
-  opacity: 0;
-  background: -webkit-radial-gradient(center, ellipse, rgba(0, 0, 0, 0.35) 0%, transparent 80%);
-  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.35) 0%, transparent 80%);
-  /* W3C */
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-  -webkit-transition-property: transform, opacity;
-  transition-property: transform, opacity;
-}
-.hvr-float-shadow:hover, .hvr-float-shadow:focus, .hvr-float-shadow:active {
-  -webkit-transform: translateY(-5px);
-  transform: translateY(-5px);
-  /* move the element up by 5px */
-}
-.hvr-float-shadow:hover:before, .hvr-float-shadow:focus:before, .hvr-float-shadow:active:before {
-  opacity: 1;
-  -webkit-transform: translateY(5px);
-  transform: translateY(5px);
-  /* move the element down by 5px (it will stay in place because it's attached to the element that also moves up 5px) */
+	display: inline-block;
+	vertical-align: middle;
+	-webkit-transform: perspective(1px) translateZ(0);
+	transform: perspective(1px) translateZ(0);
+	box-shadow: 0 0 1px transparent;
+	position: relative;
+	-webkit-transition-duration: 0.3s;
+	transition-duration: 0.3s;
+	-webkit-transition-property: transform;
+	transition-property: transform;
 }
 
+.hvr-float-shadow:before {
+	pointer-events: none;
+	position: absolute;
+	z-index: -1;
+	content: "";
+	top: 100%;
+	left: 5%;
+	height: 10px;
+	width: 90%;
+	opacity: 0;
+	background: -webkit-radial-gradient( center, ellipse, rgba(0, 0, 0, 0.35) 0%, transparent 80%);
+	background: radial-gradient( ellipse at center, rgba(0, 0, 0, 0.35) 0%, transparent 80%);
+	/* W3C */
+	-webkit-transition-duration: 0.3s;
+	transition-duration: 0.3s;
+	-webkit-transition-property: transform, opacity;
+	transition-property: transform, opacity;
+}
+
+.hvr-float-shadow:hover,
+.hvr-float-shadow:focus,
+.hvr-float-shadow:active {
+	-webkit-transform: translateY(-5px);
+	transform: translateY(-5px);
+	/* move the element up by 5px */
+}
+
+.hvr-float-shadow:hover:before,
+.hvr-float-shadow:focus:before,
+.hvr-float-shadow:active:before {
+	opacity: 1;
+	-webkit-transform: translateY(5px);
+	transform: translateY(5px);
+	/* move the element down by 5px (it will stay in place because it's attached to the element that also moves up 5px) */
+}
 
 
 /*----------Firebase Login Widget-----------------
 */
+
 mdl-shadow--2dp {
-    box-shadow: none;
+	box-shadow: none;
 }
 
 .firebaseui-info-bar {
-    margin-top: 20px;
+	margin-top: 20px;
 }
 
 div.mdl-progress::after {
-    display: block;
-    color: black;
-    content: "Authenticating";
-    margin: 20px auto;
-    text-align: center;
+	display: block;
+	color: black;
+	content: "Authenticating";
+	margin: 20px auto;
+	text-align: center;
 }
 
 .mdl-progress {
-    height: 5px;
+	height: 5px;
 }

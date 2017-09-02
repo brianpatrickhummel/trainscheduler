@@ -1,92 +1,102 @@
 <!doctype html>
 <html>
-  <head>
-    <title>TrainTrack</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
-      <!-- jQuery CDN -->
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-      <!-- Bootstrap JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-      <!-- Bootstrap compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-      <!-- Firebase JavaScript Link -->
-    <script src="https://www.gstatic.com/firebasejs/4.0.0/firebase.js"></script>
-      <!-- Firebase Auth UI -->
-    <script src="https://cdn.firebase.com/libs/firebaseui/2.0.0/firebaseui.js"></script>
-    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.0.0/firebaseui.css" />
-      <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Jura" rel="stylesheet">
-      <!-- Font Awesome -->
-    <link rel="stylesheet" href="assets/css/fontawesome/css/font-awesome.min.css">
-      <!-- Local CSS link -->
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-  </head>
-  <body>
-    <div class="container">
-      <div class="jumbotron text-center">
-        <a href="https://brianpatrickhummel.github.io/week7-trainscheduler/"><i class="fa fa-train fa-2x" aria-hidden="true"></i></a>
-        <!-- <h4>welcome to</h4> -->
-        <h1><bold id="firstHalfTwo">TRAIN</bold>TRACK</h1>
-        <h4>a metropolitan transit scheduler</h4>
-      </div> 
-      <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-          <div class="panel panel-primary">
-            <div class="panel-heading">
-              <h3 class="panel-title">CURRENT TRAIN SCHEDULE</h3>
-            </div>
-            <div class="panel-body">
-             <table class="table table-hover">
-                <thead>
-                  <tr>
-                    <th>TRAIN NAME</th>
-                    <th>DESTINATION</th>
-                    <th>FREQUENCY (MIN)</th>
-                    <th>NEXT ARRIVAL</th>
-                    <th>MINUTES AWAY</th>
-                  </tr>
-                </thead>
-                <tbody class="trainSchedule">
-                  <!-- dynamically insert 1 <tr> and 6 <td> -->
-                </tbody>
-              </table> 
-            </div>
-          </div>  
-          <div class="panel panel-primary">
-            <div class="panel-heading">
-              <h3 class="panel-title">ADD TRAIN</h3>
-            </div>
-            <div class="panel-body">
-               <form>
-                  <div class="form-group">
-                    <label>TRAIN NAME</label>
-                    <input type="text" class="form-control" id="trainName" placeholder="The Western">
-                  </div>
-                  <div class="form-group">
-                    <label>DESTINATION</label>
-                    <input type="text" class="form-control" id="destination" placeholder="San Antonio, TX">
-                  </div>
-                  <div class="form-group">
-                    <label>FIRST TRAIN TIME (HH:mm - MILITARY TIME)</label>
-                    <input type="text" class="form-control" id="firstTrain" placeholder="15:30">
-                  </div>
-                  <div class="form-group">
-                    <label>FREQUENCY (MIN)</label>
-                    <input type="number" class="form-control" id="frequency" placeholder="30">
-                  </div>
-                  <button type="submit" class="btn btn-primary submit-button hvr-float-shadow ">TRACK<i class="fa fa-train fa-lg" aria-hidden="true"></i>TRAIN</button> 
-                  <button type="submit" class="btn btn-primary authenticate-button hvr-grow-shadow "><i class="fa fa-github fa-lg" href="https://brianpatrickhummel.github.io/week7-trainscheduler/" aria-hidden="true"></i>LOG OUT<i class="fa fa-google fa-lg" aria-hidden="true"></i></button>
-                </form>
-            </div>
+
+<head>
+  <title>TrainTrack</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+  <!-- jQuery CDN -->
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+  <!-- Bootstrap JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous"></script>
+  <!-- Bootstrap compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+    crossorigin="anonymous">
+  <!-- Firebase JavaScript Link -->
+  <script src="https://www.gstatic.com/firebasejs/4.0.0/firebase.js"></script>
+  <!-- Firebase Auth UI -->
+  <script src="https://cdn.firebase.com/libs/firebaseui/2.0.0/firebaseui.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.0.0/firebaseui.css" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Jura" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="assets/css/fontawesome/css/font-awesome.min.css">
+  <!-- Local CSS link -->
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="jumbotron text-center">
+      <a href="https://brianpatrickhummel.github.io/week7-trainscheduler/"><i class="fa fa-train fa-2x" aria-hidden="true"></i></a>
+      <!-- <h4>welcome to</h4> -->
+      <h1>
+        <bold id="firstHalfTwo">TRAIN</bold>TRACK</h1>
+      <h4>a metropolitan transit scheduler</h4>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">CURRENT TRAIN SCHEDULE</h3>
           </div>
-        </div>    <!-- main column -->
-      </div>  <!-- main body row -->
-    </div>  <!-- container -->
-    <!-- moment.js -->
+          <div class="panel-body">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>TRAIN NAME</th>
+                  <th>DESTINATION</th>
+                  <th>FREQUENCY (MIN)</th>
+                  <th>NEXT ARRIVAL</th>
+                  <th>MINUTES AWAY</th>
+                </tr>
+              </thead>
+              <tbody class="trainSchedule">
+                <!-- dynamically insert 1 <tr> and 6 <td> -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">ADD TRAIN</h3>
+          </div>
+          <div class="panel-body">
+            <form>
+              <div class="form-group">
+                <label>TRAIN NAME</label>
+                <input type="text" class="form-control" id="trainName" placeholder="The Western">
+              </div>
+              <div class="form-group">
+                <label>DESTINATION</label>
+                <input type="text" class="form-control" id="destination" placeholder="San Antonio, TX">
+              </div>
+              <div class="form-group">
+                <label>FIRST TRAIN TIME (HH:mm - MILITARY TIME)</label>
+                <input type="text" class="form-control" id="firstTrain" placeholder="15:30">
+              </div>
+              <div class="form-group">
+                <label>FREQUENCY (MIN)</label>
+                <input type="number" class="form-control" id="frequency" placeholder="30">
+              </div>
+              <button type="submit" class="btn btn-primary submit-button hvr-float-shadow ">TRACK<i class="fa fa-train fa-lg" aria-hidden="true"></i>TRAIN</button>
+              <button type="submit" class="btn btn-primary authenticate-button hvr-grow-shadow "><i class="fa fa-github fa-lg" href="https://brianpatrickhummel.github.io/week7-trainscheduler/" aria-hidden="true"></i>LOG OUT<i class="fa fa-google fa-lg" aria-hidden="true"></i></button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- main column -->
+    </div>
+    <!-- main body row -->
+  </div>
+  <!-- container -->
+  <!-- moment.js -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
-    <!-- local JS file link -->
+  <!-- local JS file link -->
   <script src="assets/javascript/app2.js"></script>
-  </body>  
+</body>
+
 </html>
