@@ -9,31 +9,20 @@ var config = {
 };
 firebase.initializeApp(config);
 
-
-
 //=============  Firebase Authentication =============
 
 var uiConfig = {
-  signInSuccessUrl:
-    "https://brianpatrickhummel.github.io/trainscheduler/index2.html",
-  signInOptions: [
-    firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-    // firebase.auth.FacebookAuthProvider.PROVIDER_ID,
-    // firebase.auth.TwitterAuthProvider.PROVIDER_ID,
-    firebase.auth.GithubAuthProvider.PROVIDER_ID
-    // firebase.auth.EmailAuthProvider.PROVIDER_ID,
-    // firebase.auth.PhoneAuthProvider.PROVIDER_ID
-  ]
+  signInSuccessUrl: "https://brianpatrickhummel.github.io/trainscheduler/index2.html",
+  signInOptions: [firebase.auth.GoogleAuthProvider.PROVIDER_ID, firebase.auth.GithubAuthProvider.PROVIDER_ID]
 };
 // Initialize the FirebaseUI Widget using Firebase.
 var ui = new firebaseui.auth.AuthUI(firebase.auth());
 // The start method will wait until the DOM is loaded.
 ui.start("#firebaseui-auth-container", uiConfig);
 
-
 // Firebase User Logout - Deletes Firebase Accout
 
-$(".authenticate-button").on("click", function () {
+$(".authenticate-button").on("click", function() {
   event.preventDefault();
   logUserOut();
   localStorage.clear();
@@ -43,25 +32,26 @@ $(".authenticate-button").on("click", function () {
 function logUserOut() {
   var user = firebase.auth().currentUser;
   if (user) {
-    user.delete().then(function() {
-      console.log("User successfully logged out");
-      window.location.href = "https://brianpatrickhummel.github.io/trainscheduler";
-    }).catch(function(error) {
-          console.log("Error during sign-out: " + error);
-    });
+    user
+      .delete()
+      .then(function() {
+        console.log("User successfully logged out");
+        window.location.href = "https://brianpatrickhummel.github.io/trainscheduler";
+      })
+      .catch(function(error) {
+        console.log("Error during sign-out: " + error);
+      });
   } else {
     console.log("No user is currently signed in");
   }
 }
-
-
 
 // ===========  Firebase DataBase =============
 
 var database = firebase.database();
 
 // Gather information from Form when Track Train button clicked
-$(".submit-button").on("click", function (event) {
+$(".submit-button").on("click", function(event) {
   event.preventDefault();
   var trainName = $("#trainName")
     .val()
@@ -72,8 +62,8 @@ $(".submit-button").on("click", function (event) {
   var firstTrain = moment($("#firstTrain").val(), "HH:mm").format("X");
   var frequency = parseInt(
     $("#frequency")
-    .val()
-    .trim()
+      .val()
+      .trim()
   );
   // Send Form data to Firebase Database
   database.ref().push({
@@ -90,12 +80,11 @@ $(".submit-button").on("click", function (event) {
 });
 
 // When a new entry is added to Firebase DB, gather DB data and render in DOM
-database.ref().on("child_added", function (childSnapshot, prevChildKey) {
+database.ref().on("child_added", function(childSnapshot, prevChildKey) {
   var trainName = childSnapshot.val().trainName.toUpperCase();
   var destination = childSnapshot.val().destination.toUpperCase();
   var firstTrain = moment.unix(childSnapshot.val().firstTrain).format("HH:mm");
   var frequency = childSnapshot.val().frequency;
-
   var firstTimeConverted = moment(firstTrain, "HH:mm").subtract(1, "years");
   var currentTime = moment();
 
@@ -114,18 +103,15 @@ database.ref().on("child_added", function (childSnapshot, prevChildKey) {
 
   $(".trainSchedule").prepend(
     "<tr><td>" +
-    trainName +
-    "</td><td>" +
-    destination +
-    "</td><td>" +
-    frequency +
-    "</td><td>" +
-    nextArrival +
-    "</td><td>" +
-    minutesAway +
-    "</td></tr>"
+      trainName +
+      "</td><td>" +
+      destination +
+      "</td><td>" +
+      frequency +
+      "</td><td>" +
+      nextArrival +
+      "</td><td>" +
+      minutesAway +
+      "</td></tr>"
   );
 });
-
-
-
