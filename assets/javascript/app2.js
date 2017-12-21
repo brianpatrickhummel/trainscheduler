@@ -1,3 +1,14 @@
+// Initialize Firebase
+var config = {
+  apiKey: "AIzaSyDM8wo0QlZTF5UC1_X1bOKbXlJQLutzlE8",
+  authDomain: "trainscheduler-1d314.firebaseapp.com",
+  databaseURL: "https://trainscheduler-1d314.firebaseio.com",
+  projectId: "trainscheduler-1d314",
+  storageBucket: "trainscheduler-1d314.appspot.com",
+  messagingSenderId: "383844800617"
+};
+firebase.initializeApp(config);
+
 function logUserOut() {
   var user = firebase.auth().currentUser;
   if (user) {
