@@ -24,9 +24,9 @@ ui.start("#firebaseui-auth-container", uiConfig);
 
 $(".authenticate-button").on("click", function() {
   event.preventDefault();
-  logUserOut();
   localStorage.clear();
   sessionStorage.clear();
+  logUserOut();
 });
 
 function logUserOut() {
