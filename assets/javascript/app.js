@@ -33,7 +33,7 @@ function logUserOut() {
   var user = firebase.auth().currentUser;
   if (user) {
     user
-      .delete()
+      .signOut()
       .then(function() {
         console.log("User successfully logged out");
         window.location.href = "https://brianpatrickhummel.github.io/trainscheduler";
