@@ -9,6 +9,15 @@ var config = {
 };
 firebase.initializeApp(config);
 
+// Firebase User Logout - Deletes Firebase Accout
+
+$(".authenticate-button").on("click", function() {
+  event.preventDefault();
+  localStorage.clear();
+  sessionStorage.clear();
+  logUserOut();
+});
+
 function logUserOut() {
   var user = firebase.auth().currentUser;
   if (user) {
