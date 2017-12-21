@@ -32,7 +32,8 @@ $(".authenticate-button").on("click", function() {
 function logUserOut() {
   var user = firebase.auth().currentUser;
   if (user) {
-    user
+    firebase
+      .auth()
       .signOut()
       .then(function() {
         console.log("User successfully logged out");
