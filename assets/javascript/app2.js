@@ -9,7 +9,7 @@ var config = {
 };
 firebase.initializeApp(config);
 
-// Firebase User Logout - Deletes Firebase Accout
+// Firebase User Logout - Deletes Firebase Account
 
 $(".authenticate-button").on("click", function() {
   event.preventDefault();
